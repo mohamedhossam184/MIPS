@@ -12,3 +12,4 @@ I ran two programs to test my design:
 2- get fibonnaci serise
 
 datapath
+![MIPS](https://user-images.githubusercontent.com/84816935/189123471-a72572c6-3016-4ed2-8510-4da7518b54c1.png)
