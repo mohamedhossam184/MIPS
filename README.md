@@ -8,7 +8,7 @@ I divide muy architecture into four stages:
 4- storing stage: at this stage we store variables either in memory or in register file according to opcode at instruction and this stage works at positive edge of clk2. 
 My design is simulated in modelsim tool.
 I ran two programs to test my design:
-1- get factorial of 7 
+1- get factorial of "7" 
 2- get fibonnaci serise
 
 datapath
