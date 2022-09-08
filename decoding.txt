@@ -1,0 +1,31 @@
+always @ (posedge clk2)                //Decoding stage
+begin
+ID_IR <=#2 IF_IR;
+ID_PC <=#2 IF_PC;
+
+case (IF_IR[31:26])
+ADD,SUB,AND,OR,MUL,SLT:
+begin
+ID_A<=#2 Reg[IF_IR[25:21]];
+ID_B<=#2 Reg[IF_IR[20:16]];
+ID_IMMEDIATE<=#2 0;
+end
+LOAD,STORE,SLTI,ADDI,SUBI:
+begin
+ID_A<=#2 Reg[IF_IR[25:21]];
+ID_B<=#2 Reg[IF_IR[20:16]];
+ID_IMMEDIATE <=#2 {{16{IF_IR[15]}},IF_IR[15:0]};
+end
+JUMP: PC<=#2 {PC[31:28],IF_IR[25:0],2'b00};
+BNEQZ:
+begin
+if(Reg[IF_IR[25:21]]!=0)
+PC<=#2 PC + {{16{IF_IR[15]}},IF_IR[15:0]};
+end
+BEQZ:
+begin
+if(Reg[IF_IR[25:21]]==0)
+PC<=#2 PC + {{16{IF_IR[15]}},IF_IR[15:0]};
+end
+endcase
+end
