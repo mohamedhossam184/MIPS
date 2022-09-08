@@ -20,3 +20,9 @@ I ran two programs to test my design:
 
 
 ![MIPS_Stages](https://user-images.githubusercontent.com/84816935/189123812-bbfd71cf-ae39-410d-8a2e-d33c296e5534.png)
+
+#instructions format
+
+
+![MIPS_instruction](https://user-images.githubusercontent.com/84816935/189124151-d7efc84c-dc49-4dd2-9148-e8dd34d2790e.png)
+
