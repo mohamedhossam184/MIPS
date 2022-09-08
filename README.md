@@ -15,3 +15,8 @@ I ran two programs to test my design:
 
 
 ![MIPS](https://user-images.githubusercontent.com/84816935/189123471-a72572c6-3016-4ed2-8510-4da7518b54c1.png)
+
+# stages
+
+
+![MIPS_Stages](https://user-images.githubusercontent.com/84816935/189123812-bbfd71cf-ae39-410d-8a2e-d33c296e5534.png)
