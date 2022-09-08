@@ -1,0 +1,16 @@
+//machine code for fibonnaci serise
+
+//Hexadecimal format
+
+00015000
+240100c8
+240100c9
+03fff800
+200200c8
+200300c9
+02108000
+240300c8
+00432000
+03fff800
+240400c9
+37e0fff8

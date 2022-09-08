@@ -1,0 +1,6 @@
+always @ (posedge clk1)      //fetch stage
+begin
+IF_IR <=#2 mem[PC];
+IF_PC<=#2 PC+1;
+PC <=#2 PC+1;
+end

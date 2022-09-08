@@ -1,0 +1,20 @@
+always @ (posedge clk2)    //storing stage
+begin
+M_IR<=#2 EX_IR;
+M_PC<=#2 EX_PC;
+case (EX_IR[31:26])	
+ADD:  Reg[EX_IR[15:11]]<=#2 EX_ALUOUT;
+SUB:   Reg[EX_IR[15:11]]<=#2 EX_ALUOUT;
+AND:  Reg[EX_IR[15:11]]<=#2 EX_ALUOUT;
+OR:   Reg[EX_IR[15:11]]<=#2 EX_ALUOUT;
+MUL:   Reg[EX_IR[15:11]]<=#2 EX_ALUOUT;
+SLT:   Reg[EX_IR[15:11]]<=#2 EX_ALUOUT;
+LOAD:   Reg[EX_IR[20:16]]<=#2 mem[EX_ALUOUT];
+STORE:   mem[EX_ALUOUT]<=#2 Reg[EX_IR[20:16]];
+ADDI:   Reg[EX_IR[20:16]]<=#2 EX_ALUOUT;
+SUBI: Reg[EX_IR[20:16]]<=#2 EX_ALUOUT;
+SLTI:  Reg[EX_IR[20:16]]<=#2 EX_ALUOUT;
+endcase
+end
+endmodule
+

@@ -1,0 +1,18 @@
+always @ (posedge clk1)    //execution stage
+begin
+EX_IR<=#2 ID_IR;
+EX_PC<=#2 ID_PC;
+case (ID_IR[31:26])
+ADD:   EX_ALUOUT<=#2 ID_A + ID_B;
+SUB:   EX_ALUOUT<=#2 ID_A - ID_B;
+AND:   EX_ALUOUT<=#2 ID_A & ID_B;
+OR:   EX_ALUOUT<=#2 ID_A | ID_B;
+MUL:   EX_ALUOUT<=#2 ID_A * ID_B;
+SLT:   EX_ALUOUT<=#2 ID_A < ID_B;
+LOAD:   EX_ALUOUT<=#2 ID_A + ID_IMMEDIATE;
+STORE:   EX_ALUOUT<=#2 ID_A + ID_IMMEDIATE;
+SLTI:   EX_ALUOUT<=#2 ID_A < ID_IMMEDIATE;
+ADDI:   EX_ALUOUT<=#2 ID_A + ID_IMMEDIATE;
+SUBI:   EX_ALUOUT<=#2 ID_A - ID_IMMEDIATE;
+endcase
+end

@@ -1,0 +1,15 @@
+//machine code for factorial calculations
+
+//Hexadecimal format
+
+280000c8
+200100c8
+03fff800
+2c220001
+02108000
+14220800
+2c420001
+03fff800
+3440fffc
+24010000
+
